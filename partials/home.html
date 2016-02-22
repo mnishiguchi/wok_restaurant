@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+
+<div class="page-wrapper">
+  <div class="row categories">
+    <div
+      ng-repeat="item in vm.categoryImages track by $index"
+      class="col-sm-4">
+      <a ng-href="{{ item.linkUrl }}" class="portfolio-box">
+        <img
+          ng-src="{{ item.imgUrl }}"
+          alt="{{ item.name }}" title="{{ item.name }}">
+      </a>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</div><!-- /.page-wrapper -->
