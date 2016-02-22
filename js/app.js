@@ -66,7 +66,7 @@
 
   function run( $rootScope, $route ) {
 
-    var baseTitle = " | ¡WoW!";
+    var baseTitle = " | Wok";
 
     $rootScope.$on( "$routeChangeSuccess", function() {
 
