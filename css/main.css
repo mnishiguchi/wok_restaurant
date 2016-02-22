@@ -1,0 +1,254 @@
+@charset "UTF-8";
+
+
+/* This is to display borders */
+/** { border: 1px dotted red }*/
+
+
+/*
+  Reset CSS, border-box model
+*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*
+  App-wide common styles.
+ */
+
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  background: #ebeef4;
+}
+
+
+/*
+  ng-animate
+  - http://ng.malsup.com/#!/css-animations-for-ng-hide_ng-show
+ */
+
+
+.ng-hide-add, .ng-hide-remove {
+  /* ensure visibility during the transition */
+  display: block !important; /* yes, important */
+}
+.cssSlideUp {
+  transition: .6s linear all;
+  height: 235px;
+}
+.cssSlideUp.ng-hide {
+  height: 0;
+}
+
+
+/*
+  #app-navbar
+ */
+
+
+#app-navbar {
+  position: relative; /* This is to make CSS transition smooth */
+  background: black;
+  color: white;
+  display: block;
+  clear: both;
+  overflow: hidden;  /* This is to prevent the margin collapsing */
+}
+#logo {
+  font-size: 2.5em;
+  letter-spacing: -1px;
+  color: white;
+  cursor: default;  /* Default cursor instead of the finger pointing */
+  text-align: left;
+}
+hgroup {
+  float: left;
+  display: block;
+  width: 120px;
+  margin-top: 10px;
+  text-align: center;
+}
+nav {
+  display: block;
+  width: 100%;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+nav li {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #999;
+}
+nav li a {
+  display: block;
+  vertical-align: middle;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 12px;
+  color: white;
+  transition: color 0.6s, background 0.6s;
+}
+nav li a.active {
+  background: none;
+  color: white;
+  cursor: default;  /* Default cursor instead of the finger pointing */
+  background: #6d84b4;
+}
+nav li a:hover {
+  background: #293e6a;
+  color: white;
+}
+nav li a.active:hover {
+  background: #6d84b4;
+}
+.hamburger {
+  position: absolute;
+  right: 12px;
+  top: 20px;
+  width: 32px;
+  height: 32px;
+  visibility: visible;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.hamburger:hover {
+}
+
+
+/*
+  Page contents
+*/
+
+
+.categories img {
+  width: 100%;
+  height: auto;
+}
+
+
+/*
+  Footer
+ */
+
+
+footer {
+  padding: 40px 0 20px 0;
+}
+footer ul {
+  display: inline-block;
+}
+footer li {
+  display: inline-block;
+  list-style: none;
+}
+
+/*==========  Custom, iPhone Retina  ==========*/
+/*@media only screen and (min-width : 320px) {}*/
+
+
+/*==========  Extra Small Devices, Phones  ==========*/
+@media only screen and (min-width : 544px) {
+
+
+  /*
+    #app-navbar
+   */
+
+
+  #logo,
+  #logo~p {  /* paragraph that is a sibling of #logo */
+  }
+  hgroup {
+    display: block;
+    margin-top: 10px;
+  }
+  hgroup p {
+    font-size: 0.9em;
+    padding-bottom: 5px;
+  }
+  nav {
+    display: block;
+    width: 100%;
+  }
+  nav ul {
+    display: block;
+  }
+  nav li {
+    display: inline-block;
+    width: auto;
+    border-top: none;
+  }
+  nav li a {
+    display: block;
+    line-height: 60px;
+    height: 60px;
+    padding: 0 12px;
+  }
+}
+
+/*==========  Small Devices, Tablets  ==========*/
+@media only screen and (min-width : 768px) {
+
+
+  /*
+    #app-navbar
+   */
+
+
+  hgroup {
+    display: inline-block;
+    margin-top: 10px;
+    width: 30%;
+    float: left;
+  }
+  hgroup p {
+    font-size: 0.9em;
+    padding-bottom: 5px;
+  }
+  nav {
+    display: inline-block;
+    width: 70%;
+    float: right;
+  }
+  nav ul {
+    display: block;
+  }
+  nav li {
+    display: inline-block;
+    width: auto;
+    border-top: none;
+  }
+  nav li a {
+    line-height: 80px;
+    height: 80px;
+    padding: 0 12px;
+  }
+
+
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
