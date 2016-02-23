@@ -133,6 +133,10 @@ nav li a.active:hover {
   Pages
 */
 
+.page header {
+  min-height: 300px;
+}
+
 
 .page.home img {
   display: none;
