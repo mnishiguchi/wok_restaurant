@@ -43,7 +43,7 @@ body {
   display: block !important; /* yes, important */
 }
 .cssSlideUp {
-  transition: .6s linear all;
+  transition: .1s linear all;
   height: 235px;
 }
 .cssSlideUp.ng-hide {
@@ -58,7 +58,7 @@ body {
 
 #app-navbar {
   position: relative; /* This is to make CSS transition smooth */
-  background: black;
+  background: rgba(0,0,0,.6);
   color: white;
   display: block;
   clear: both;
@@ -85,7 +85,7 @@ nav {
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
   text-align: center;
 }
 nav li {
@@ -96,6 +96,7 @@ nav li {
 nav li a {
   display: block;
   vertical-align: middle;
+  width: 100%;
   line-height: 40px;
   height: 40px;
   padding: 0 12px;
@@ -121,7 +122,6 @@ nav li a.active:hover {
   top: 20px;
   width: 32px;
   height: 32px;
-  visibility: visible;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -130,13 +130,12 @@ nav li a.active:hover {
 
 
 /*
-  Page contents
+  Pages
 */
 
 
-.categories img {
-  width: 100%;
-  height: auto;
+.page.home img {
+  display: none;
 }
 
 
@@ -155,9 +154,6 @@ footer li {
   display: inline-block;
   list-style: none;
 }
-
-/*==========  Custom, iPhone Retina  ==========*/
-/*@media only screen and (min-width : 320px) {}*/
 
 
 /*==========  Extra Small Devices, Phones  ==========*/
@@ -198,7 +194,23 @@ footer li {
     height: 60px;
     padding: 0 12px;
   }
+  .hamburger {
+    display: none;
+  }
+
+
+  /*
+    Pages
+  */
+
+
+  .page.home img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
+
 
 /*==========  Small Devices, Tablets  ==========*/
 @media only screen and (min-width : 768px) {
