@@ -38,7 +38,9 @@
       })
       .when("/restaurant", {
           title:       "Restaurant",
-          templateUrl: "partials/restaurant.html"
+          templateUrl: "partials/restaurant.html",
+          controller:   RestaurantController,
+          controllerAs: "vm",
       })
       .when("/karaoke", {
           title:       "Karaoke",
@@ -49,7 +51,7 @@
       .when("/online-order", {
           title:       "Online Order",
           templateUrl: "partials/online-order.html",
-          controller:   function() {},
+          controller:   OnlineOrderController,
           controllerAs: "vm",
       })
       .otherwise({
@@ -99,6 +101,22 @@
 
     } // end HomeController
 
+  angular
+    .module( "app" )
+    .controller( "RestaurantController", RestaurantController );
+
+    RestaurantController.$inject = [];
+
+    function RestaurantController() {
+
+      this.categoryImages = categoryImages;
+      this.bgCss = {
+        "background": "url(" + this.categoryImages[ 0 ].imgUrl + "  )",
+        "background-size":     "cover",
+        "background-position": "center",
+      }
+
+    } // end RestaurantController
 
   angular
     .module( "app" )
@@ -109,8 +127,31 @@
     function KaraokeController() {
 
       this.roomCharge = roomCharge;
+      this.categoryImages = categoryImages;
+      this.bgCss = {
+        "background": "url(" + this.categoryImages[ 1 ].imgUrl + "  )",
+        "background-size":     "cover",
+        "background-position": "center",
+      }
 
     } // end KaraokeController
+
+  angular
+    .module( "app" )
+    .controller( "OnlineOrderController", OnlineOrderController );
+
+    OnlineOrderController.$inject = [];
+
+    function OnlineOrderController() {
+
+      this.categoryImages = categoryImages;
+      this.bgCss = {
+        "background": "url(" + this.categoryImages[ 2 ].imgUrl + "  )",
+        "background-size":     "cover",
+        "background-position": "center",
+      }
+
+    } // end OnlineOrderController
 
 
   //=============================================//
