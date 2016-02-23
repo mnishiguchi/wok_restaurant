@@ -157,7 +157,6 @@
       vm.pages = [];      // path:  The "#" paths, e.g., "#/about".
                           // title: The same as the page title.
       vm.activeTab;       // The name of the active tab.
-      vm.isMobile;        // The current display type.
       vm.isVisibleMenu;   // The visibility of hamburger button.
 
 
@@ -170,7 +169,7 @@
 
 
       // Keep watch on window resizing.
-      angular.element( $window ).on('resize', function() {
+      angular.element( $window ).on( 'resize', function() {
 
         // Update the state of the navbar
         $scope.$apply( function() { handleResizing(); } );
@@ -244,10 +243,12 @@
        */
       function handleResizing() {
 
-        // Update the state.
-        vm.isMobile      = ( $window.innerWidth < breakpoint ) ? true : false;
-        vm.isVisibleMenu = ( vm.isMobile ) ? false : true;
+        // Determine the visibility of the menu.
+        var isMobile     = ( $window.innerWidth < breakpoint ) ? true : false;
+        vm.isVisibleMenu = ( isMobile ) ? false : true;
 
+        // We do not need the animation until the hamburger is clicked.
+        // Without removing it, the animation is immediately applied even on desktop.
         removeAnimation();
 
       } // end handleResizing
@@ -258,7 +259,9 @@
        */
       function addAnimation() {
 
-        // If not done already, find the nav element and
+        // If not done already, find the nav element.
+        // IMPORTANT: We cannot do this, when this controller is instantiated
+        // because at that time the app-navbar component is not created yet.
         if ( ! navElem ) {
 
           navElem = angular.element( document.querySelector( '#app-navbar--nav' ) );

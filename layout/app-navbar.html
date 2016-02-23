@@ -4,8 +4,8 @@
       <!-- Hamburger button -->
       <button type="button"
         class="hamburger"
-        ng-click="$ctrl.toggleMenu()"
-        ng-if="$ctrl.isMobile">
+        ng-click="$ctrl.toggleMenu()">
+        <!-- ng-show="$ctrl.isMobile" -->
         &#9776;
       </button>
 
@@ -19,6 +19,7 @@
         <li ng-repeat="page in $ctrl.pages track by $index" >
 
           <a
+            ng-click="$ctrl.toggleMenu()"
             ng-href="{{ page.path }}"
             ng-class="{ active: page.title === $ctrl.activeTab }" >
             {{ page.title }}
