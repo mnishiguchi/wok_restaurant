@@ -19,7 +19,7 @@ Reset CSS, border-box model
 
 /*
 App-wide common styles.
- */
+*/
 
 
 html, body {
@@ -30,57 +30,82 @@ body {
   -webkit-font-smoothing: antialiased;
   background: #ebeef4;
 }
-
+.container {
+  position: relative;
+}
 
 /*
 Typography
- */
+*/
 
 
+/* Reset some propertyies so that we can adjust spacing easily. */
+h1, h2, h3, h4, p {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+h1, .h1 {
+  color: rgba(255,255,255,.8);
+  /*font-family: Georgia, serif;*/
+}
+h2, .h2 {
+}
+h3, .h3{
+}
+h4, .h4 {
+}
+p {
+  font-size: 1.0em;
+  color: black;
+  padding-bottom: 12px;
+  line-height: 1.8em;
+  text-align: justify;
+  font-family: Georgia, serif;
+}
+li {
+  line-height: 1.8em;
+}
 a {
-
+  color: #676767;
+}
+a:hover {
+  color: #7cc70c;
 }
 
 
 /*
-ng-animate
-- http://ng.malsup.com/#!/css-animations-for-ng-hide_ng-show
- */
+#navbar
+*/
 
 
-.ng-hide-add, .ng-hide-remove {
-  /* ensure visibility during the transition */
-  display: block !important; /* yes, important */
-}
-.cssSlideUp {
-  transition: .1s linear all;
-  height: 235px;
-}
-.cssSlideUp.ng-hide {
-  height: 0;
-}
-
-
-/*
-  #navbar
- */
-
-
-#logo {
-  font-size: 2.5em;
-  letter-spacing: -1px;
+#logo a {
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: -2.0px;
   color: white;
   cursor: default;  /* Default cursor instead of the finger pointing */
   height: 60px;
   line-height: 60px;
-  margin: 0;
+  border: 2px solid white;
+  padding: 5px;
+
 }
 #navbar {
   position: relative; /* This is to make CSS transition smooth? */
-  background: rgba(0,0,0,.6);
-  color: white;
+  background: #333;
+  color: #333;
   display: block;
   overflow: hidden;  /* This is to prevent the margin collapsing? */
+}
+#navbar nav {
+  /* ensure visibility during the transition */
+  display: block !important; /* yes, important */
+  height: 0;
+}
+#navbar nav.cssSlideUp {
+  transition: .1s linear all;
+  height: 168px;
 }
 #navbar ul {
   list-style: none;
@@ -118,12 +143,14 @@ ng-animate
 }
 #hamburger {
   position: absolute;
-  right: 12px;
-  top: 20px;
-  width: 32px;
-  height: 32px;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   border-radius: 5px;
+  background: white;
+  margin-right: 16px;
 }
 #hamburger:hover {
 }
@@ -152,7 +179,7 @@ Pages
 
 
 /*
-  Footer
+Footer
  */
 
 
@@ -170,6 +197,10 @@ footer li {
 
 /*==========  Extra Small Devices, Phones  ==========*/
 @media only screen and (min-width : 544px) {
+}
+
+/*==========  Small Devices, Tablets  ==========*/
+@media only screen and (min-width : 768px) {
 
 
   /*
@@ -205,7 +236,7 @@ footer li {
 
 
   /*
-    Pages
+  Pages
   */
 
 
@@ -213,21 +244,6 @@ footer li {
     display: block;
     width: 100%;
     height: auto;
-  }
-}
-
-
-/*==========  Small Devices, Tablets  ==========*/
-@media only screen and (min-width : 768px) {
-
-
-  /*
-  #navbar
-   */
-
-
-  #navbar nav li a {
-    padding: 0 12px;
   }
 
 }

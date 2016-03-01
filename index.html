@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html
   lang="en"
-  ng-app="app" >
+  ng-app="app"
+  ng-controller="AppController as app">
 
 <head>
   <meta charset="utf-8">
@@ -9,7 +10,7 @@
   <meta name="description" content="An awesome Chinese restaurant">
   <meta name="author" content="">
 
-  <title>Wok - Restaurant and Karaoke</title>
+  <title>Wok'n'Roll - Restaurant and Karaoke</title>
 
   <!-- Load favicon -->
   <link rel="icon" type="image/png" href="http://placehold.it/32x32/f0ad4e/ffffff?text=★" sizes="32x32" />
@@ -33,15 +34,15 @@
   <div id="navbar">
     <div class="container">
       <hgroup>
-        <!-- Hamburger button -->
-        <button type="button" id="hamburger">&#9776;</button>
-
         <!-- Logo -->
         <h1 id="logo">
           <a href="/#/home">
-            Wok
+            Wok'n'Roll
           </a>
         </h1>
+
+        <!-- Hamburger button -->
+        <button type="button" id="hamburger">&#9776;</button>
       </hgroup>
 
       <!-- Nav links -->
@@ -112,6 +113,41 @@
 
   <!-- Load app module -->
   <script src="js/app.js"></script>
+
+  <script>
+  (function toggleNavbarAnimation(){
+
+    // Wait until DOM is loaded and then execute.
+    document.addEventListener( "DOMContentLoaded", function( event ) {
+
+      // Find elements.
+      var hamburger = document.querySelector( "#hamburger" );
+      var nav       = document.querySelector( "#navbar nav" );
+
+      // Apply the slide up animation defined in CSS to the navigation when
+      // the hamburger is clicked.
+      hamburger.addEventListener( 'click', function() {
+        nav.classList.toggle( "cssSlideUp" );
+      });
+
+      // Remove the animation when:
+      // - mouse leaves the naviagation
+      // - the navigation is clicked, or
+      // - the window size is resized.
+      nav.addEventListener( 'mouseleave', function() {
+        nav.classList.remove( "cssSlideUp" );
+      });
+      nav.addEventListener( 'click', function() {
+        nav.classList.remove( "cssSlideUp");
+      });
+      window.addEventListener( 'resize', function() {
+        nav.classList.remove( "cssSlideUp");
+      });
+
+    });
+
+  })();
+  </script>
 
 </body>
 </html>
