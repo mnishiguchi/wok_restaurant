@@ -42,23 +42,7 @@ a {
 }
 
 
-/*
-ng-animate
-- http://ng.malsup.com/#!/css-animations-for-ng-hide_ng-show
- */
 
-
-.ng-hide-add, .ng-hide-remove {
-  /* ensure visibility during the transition */
-  display: block !important; /* yes, important */
-}
-.cssSlideUp {
-  transition: .1s linear all;
-  height: 235px;
-}
-.cssSlideUp.ng-hide {
-  height: 0;
-}
 
 
 /*
@@ -77,10 +61,19 @@ ng-animate
 }
 #navbar {
   position: relative; /* This is to make CSS transition smooth? */
-  background: rgba(0,0,0,.6);
+  background: #333;
   color: white;
   display: block;
   overflow: hidden;  /* This is to prevent the margin collapsing? */
+}
+#navbar nav {
+  /* ensure visibility during the transition */
+  display: block !important; /* yes, important */
+  height: 0;
+}
+#navbar nav.cssSlideUp {
+  transition: .1s linear all;
+  height: 168px;
 }
 #navbar ul {
   list-style: none;
@@ -172,6 +165,12 @@ footer li {
 @media only screen and (min-width : 544px) {
 
 
+
+
+/*==========  Small Devices, Tablets  ==========*/
+@media only screen and (min-width : 768px) {
+
+
   /*
   #navbar
    */
@@ -216,19 +215,6 @@ footer li {
   }
 }
 
-
-/*==========  Small Devices, Tablets  ==========*/
-@media only screen and (min-width : 768px) {
-
-
-  /*
-  #navbar
-   */
-
-
-  #navbar nav li a {
-    padding: 0 12px;
-  }
 
 }
 

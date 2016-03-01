@@ -99,6 +99,16 @@
   // View controllers.
   //=============================================//
 
+  angular
+    .module( "app" )
+    .controller( "AppController", AppController );
+
+    AppController.$inject = [];
+
+    function AppController() {
+
+
+    } // end AppController
 
   angular
     .module( "app" )
