@@ -28,11 +28,10 @@ html, body {
 }
 body {
   -webkit-font-smoothing: antialiased;
-  background: #ebeef4;
+  font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
 }
-.container {
-  position: relative;
-}
+
 
 /*
 Typography
@@ -43,34 +42,45 @@ Typography
 h1, h2, h3, h4, p {
   padding: 0;
   margin: 0;
-  line-height: 1;
-}
-h1, .h1 {
-  color: rgba(255,255,255,.8);
-  /*font-family: Georgia, serif;*/
-}
-h2, .h2 {
-}
-h3, .h3{
-}
-h4, .h4 {
-}
-p {
-  font-size: 1.0em;
-  color: black;
-  padding-bottom: 12px;
-  line-height: 1.8em;
-  text-align: justify;
-  font-family: Georgia, serif;
-}
-li {
-  line-height: 1.8em;
+  /*line-height: 1;*/
 }
 a {
-  color: #676767;
+  color: #c2b49a;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
 }
-a:hover {
-  color: #7cc70c;
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+p.lead {
+  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+hr {
+  margin: 0;
+  border: 0;
+  height: 5px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
 
@@ -89,7 +99,28 @@ a:hover {
   line-height: 60px;
   border: 2px solid white;
   padding: 5px;
-
+}
+#hamburger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: white;
+  margin-right: 16px;
+  border-radius: 0;
+  background: white;
+}
+/* Remove the default underline associated with links. */
+#logo a,
+#logo a:hover,
+#navbar nav li a,
+#navbar nav li a.active,
+#navbar nav li a:hover,
+#navbar nav li a.active:hover {
+  text-decoration: none;
 }
 #navbar {
   position: relative; /* This is to make CSS transition smooth? */
@@ -131,37 +162,50 @@ a:hover {
 #navbar li a.active {
   background: none;
   color: white;
+  font-weight: bold;
   cursor: default;  /* Default cursor instead of the finger pointing */
-  background: #6d84b4;
 }
 #navbar li a:hover {
-  background: #293e6a;
-  color: white;
+  color: rgba(255,255,255,.5);
 }
 #navbar li a.active:hover {
-  background: #6d84b4;
 }
-#hamburger {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-  border-radius: 5px;
-  background: white;
-  margin-right: 16px;
+
+
+/*
+HEADER
+*/
+
+
+header {
+  position: relative;
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #222222;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  padding: 100px 0;
 }
-#hamburger:hover {
+.online-order header {
+  max-width: 500px;
+  height: auto;
 }
-/* Remove the default underline associated with links. */
-#logo a,
-#logo a:hover,
-#navbar nav li a,
-#navbar nav li a.active,
-#navbar nav li a:hover,
-#navbar nav li a.active:hover {
-  text-decoration: none;
+@media (min-width: 768px) {
+  header {
+    height: 400px;
+    padding: 0;
+    background-attachment: scroll;
+  }
+  .home header {
+    height: 500px;
+  }
 }
 
 
@@ -170,9 +214,19 @@ Pages
 */
 
 
+.page {
+  min-height: 600px;
+}
 .page header {
   min-height: 300px;
 }
+.page .content {
+  min-height: 300px;
+}
+.service-box {
+  margin: 20px auto;
+}
+
 .page.home img {
   display: none;
 }
@@ -184,7 +238,8 @@ Footer
 
 
 footer {
-  padding: 40px 0 20px 0;
+  padding: 50px 0 20px 0;
+  background: #555;
 }
 footer ul {
   display: inline-block;
@@ -251,11 +306,9 @@ footer li {
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-
 }
 
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-
 }

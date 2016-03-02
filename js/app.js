@@ -106,8 +106,6 @@
     AppController.$inject = [];
 
     function AppController() {
-
-
     } // end AppController
 
   angular

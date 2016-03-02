@@ -1,6 +1,7 @@
 # Wok Restaurant
 
-## Some inspirations
+## Some inspirations / ideas
+- http://wrapbootstrap.com/preview/WB02K3KK3
 - http://www.templatemonster.com/demo/58337.html#gref
 - http://rachidmrad.com/
 
@@ -14,7 +15,7 @@ var myEl = angular.element( document.querySelector( '#some-id' ) );
 
 ==
 
-## Web event
+## Web events
 - https://developer.mozilla.org/en-US/docs/Web/Events
 
 ==
@@ -176,3 +177,93 @@ var myEl = angular.element( document.querySelector( '#some-id' ) );
   text-decoration: none;
 }
 ```
+
+==
+
+## Hamburger animation (three bars => X)
+
+```html
+    <header>
+      <h1>LOGO</h1>
+
+      <div id="hamburger">
+        <div class="inner">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+```
+
+```css
+    /*
+    Hamburger button
+    */
+
+    /* Outer */
+    #hamburger {
+      background: #999;
+      position: relative;
+      display: inline-block;
+      height: 80px;
+      width: 80px;
+      float: right;
+    }
+
+    /* Inner */
+    #hamburger .inner {
+      position: absolute;
+      display: block;
+      width: 45px;
+      height: 45px;
+      top: 15px;
+      left: 15px;
+    }
+
+    /* Bars */
+    #hamburger .inner .bar {
+      display: block;
+      width: 45px;
+      height: 9px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background: #333;
+      transition: all .3s ease-out;
+    }
+    #hamburger .inner .bar:first-child {
+      top: 0;
+    }
+    #hamburger .inner .bar:nth-child(2),
+    #hamburger .inner .bar:nth-child(3) {
+      top: 18px;
+    }
+    #hamburger .inner .bar:last-child {
+      top: 36px;
+    }
+
+    /* Hover the outer */
+    #hamburger:hover .inner .bar:first-child {
+      top: -15px;
+      opacity: 0;
+    }
+    #hamburger:hover .inner .bar:last-child {
+      top: 51px;
+      opacity: 0;
+    }
+    #hamburger:hover .inner .bar:nth-child(2) {
+      transform-origin: center;
+      transform: rotate( 45deg );
+      background: red;
+    }
+    #hamburger:hover .inner .bar:nth-child(3) {
+      transform-origin: center;
+      transform: rotate( -45deg );
+      background: red;
+    }
+```
+
+
+
