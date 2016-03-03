@@ -1,4 +1,4 @@
-# Wok Restaurant
+# Wok'n'Roll
 
 ## Some inspirations / ideas
 - http://wrapbootstrap.com/preview/WB02K3KK3
@@ -79,17 +79,22 @@ var myEl = angular.element( document.querySelector( '#some-id' ) );
 
       // Apply the slide up animation defined in CSS to the navigation when
       // the hamburger is clicked.
-      hamburger.addEventListener( 'mouseover', function() {
-        nav.classList.add( "cssSlideUp" );
+      hamburger.addEventListener( 'click', function() {
+        nav.classList.toggle( "cssSlideUp" );
       });
 
-      // Remove the animation when mouse leaves the naviagation or the
-      // navigation is clicked.
+      // Remove the animation when:
+      // - mouse leaves the naviagation
+      // - the navigation is clicked, or
+      // - the window size is resized.
       nav.addEventListener( 'mouseleave', function() {
         nav.classList.remove( "cssSlideUp" );
       });
       nav.addEventListener( 'click', function() {
         nav.classList.remove( "cssSlideUp");
+      });
+      window.addEventListener( 'resize', function() {
+        nav.click();
       });
     });
 
@@ -264,6 +269,4 @@ var myEl = angular.element( document.querySelector( '#some-id' ) );
       background: red;
     }
 ```
-
-
 

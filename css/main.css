@@ -90,6 +90,7 @@ hr {
 
 
 #logo a {
+  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.8em;
   font-weight: 700;
   letter-spacing: -2.0px;
@@ -125,7 +126,6 @@ hr {
 #navbar {
   position: relative; /* This is to make CSS transition smooth? */
   background: #333;
-  color: #333;
   display: block;
   overflow: hidden;  /* This is to prevent the margin collapsing? */
 }
@@ -253,6 +253,12 @@ footer li {
 /*==========  Extra Small Devices, Phones  ==========*/
 @media only screen and (min-width : 544px) {
 }
+
+/*==========  Small Devices, Tablets  ==========*/
+@media only screen and (min-width : 768px) {
+
+
+
 
 /*==========  Small Devices, Tablets  ==========*/
 @media only screen and (min-width : 768px) {
