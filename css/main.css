@@ -85,7 +85,7 @@ hr {
 
 
 /*
-#navbar
+#logo
 */
 
 
@@ -100,23 +100,86 @@ hr {
   line-height: 60px;
   border: 2px solid white;
   padding: 5px;
+  text-decoration: none;
 }
+
+
+/*
+#hamburger
+*/
+
+
+/* Outer */
 #hamburger {
+  background: #999;
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 60px;
+  top:0;
+  right:20px;
+  display: inline-block;
   height: 60px;
+  width: 60px;
+  float: right;
+  background: white;
   cursor: pointer;
-  border-radius: 5px;
-  background: white;
-  margin-right: 16px;
-  border-radius: 0;
-  background: white;
 }
+
+/* Inner */
+#hamburger .inner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  left: 15px;
+}
+
+/* Bars */
+#hamburger .inner .bar {
+  display: block;
+  width: 30px;
+  height: 6px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #333;
+  transition: all .3s ease-out;
+}
+#hamburger .inner .bar:first-child {
+  top: 0;
+}
+#hamburger .inner .bar:nth-child(2),
+#hamburger .inner .bar:nth-child(3) {
+  top: 12px;
+}
+#hamburger .inner .bar:last-child {
+  top: 24px;
+}
+
+/* Active hamburger */
+#hamburger.active .inner .bar:first-child {
+  top: -15px;
+  opacity: 0;
+}
+#hamburger.active .inner .bar:last-child {
+  top: 51px;
+  opacity: 0;
+}
+#hamburger.active .inner .bar:nth-child(2) {
+  transform-origin: center;
+  transform: rotate( 45deg );
+  background: red;
+}
+#hamburger.active .inner .bar:nth-child(3) {
+  transform-origin: center;
+  transform: rotate( -45deg );
+  background: red;
+}
+
+
+/*
+#navbar
+*/
+
 /* Remove the default underline associated with links. */
-#logo a,
-#logo a:hover,
 #navbar nav li a,
 #navbar nav li a.active,
 #navbar nav li a:hover,
@@ -183,7 +246,6 @@ header {
   height: auto;
   width: auto;
   max-width: 100%;
-  margin: 0 auto;
   background-color: #222222;
   background: no-repeat center center;
   background-attachment: scroll;
@@ -196,6 +258,7 @@ header {
 .online-order header {
   max-width: 500px;
   height: auto;
+  margin: 0 auto;
 }
 @media (min-width: 768px) {
   header {
