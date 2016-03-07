@@ -1,0 +1,305 @@
+/* This is to display borders */
+/** { border: 1px dotted red }*/
+/*
+Reset CSS, border-box model
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/*
+App-wide common styles.
+*/
+html, body {
+  position: relative;
+  height: 100%; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400; }
+
+/*
+Typography
+*/
+/* Reset some propertyies so that we can adjust spacing easily. */
+h1, h2, h3, h4, p {
+  padding: 0;
+  margin: 0;
+  /*line-height: 1;*/ }
+
+a {
+  color: #c2b49a;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s; }
+
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none; }
+
+p {
+  font-size: 18px;
+  line-height: 1.5; }
+
+p.lead {
+  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 24px; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+hr {
+  margin: 0;
+  border: 0;
+  height: 5px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc); }
+
+/*
+#logo
+*/
+#logo a {
+  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: -2.0px;
+  color: white;
+  cursor: default;
+  /* Default cursor instead of the finger pointing */
+  height: 60px;
+  line-height: 60px;
+  border: 2px solid white;
+  padding: 5px;
+  text-decoration: none; }
+
+/*
+#hamburger
+*/
+/* Outer */
+#hamburger {
+  background: #999;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: right;
+  background: white;
+  cursor: pointer; }
+
+/* Inner */
+#hamburger .inner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  left: 15px; }
+
+/* Bars */
+#hamburger .inner .bar {
+  display: block;
+  width: 30px;
+  height: 6px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #333;
+  transition: all .3s ease-out; }
+
+#hamburger .inner .bar:first-child {
+  top: 0; }
+
+#hamburger .inner .bar:nth-child(2),
+#hamburger .inner .bar:nth-child(3) {
+  top: 12px; }
+
+#hamburger .inner .bar:last-child {
+  top: 24px; }
+
+/* Active hamburger */
+#hamburger.active .inner .bar:first-child {
+  top: -15px;
+  opacity: 0; }
+
+#hamburger.active .inner .bar:last-child {
+  top: 51px;
+  opacity: 0; }
+
+#hamburger.active .inner .bar:nth-child(2) {
+  transform-origin: center;
+  transform: rotate(45deg);
+  background: red; }
+
+#hamburger.active .inner .bar:nth-child(3) {
+  transform-origin: center;
+  transform: rotate(-45deg);
+  background: red; }
+
+/*
+#navbar
+*/
+/* Remove the default underline associated with links. */
+#navbar nav li a,
+#navbar nav li a.active,
+#navbar nav li a:hover,
+#navbar nav li a.active:hover {
+  text-decoration: none; }
+
+#navbar {
+  position: relative;
+  /* This is to make CSS transition smooth? */
+  background: #333;
+  display: block;
+  overflow: hidden;
+  /* This is to prevent the margin collapsing? */ }
+
+#navbar nav {
+  /* ensure visibility during the transition */
+  display: block !important;
+  /* yes, important */
+  height: 0; }
+
+#navbar nav.cssSlideUp {
+  transition: .1s linear all;
+  height: 168px; }
+
+#navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; }
+
+#navbar li {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #999; }
+
+#navbar li a {
+  display: block;
+  vertical-align: middle;
+  width: 100%;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 12px;
+  color: white;
+  transition: color 0.6s, background 0.6s; }
+
+#navbar li a.active {
+  background: none;
+  color: white;
+  font-weight: bold;
+  cursor: default;
+  /* Default cursor instead of the finger pointing */ }
+
+#navbar li a:hover {
+  color: rgba(255, 255, 255, 0.5); }
+
+/*
+HEADER
+*/
+header {
+  position: relative;
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  background-color: #222222;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  padding: 100px 0; }
+
+.online-order header {
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto; }
+
+@media (min-width: 768px) {
+  header {
+    height: 400px;
+    padding: 0;
+    background-attachment: scroll; }
+  .home header {
+    height: 500px; } }
+
+/*
+Pages
+*/
+.page {
+  min-height: 600px; }
+
+.page header {
+  min-height: 300px; }
+
+.page .content {
+  min-height: 300px; }
+
+.service-box {
+  margin: 20px auto; }
+
+.page.home img {
+  display: none; }
+
+/*
+Footer
+ */
+footer {
+  padding: 50px 0 20px 0;
+  background: #555; }
+
+footer ul {
+  display: inline-block; }
+
+footer li {
+  display: inline-block;
+  list-style: none; }
+
+@media only screen and (min-width: 768px) {
+  /*
+  #navbar
+   */
+  /* Let the logo float left. */
+  #navbar hgroup {
+    display: inline-block;
+    float: left; }
+  /* Let the navigation float right. */
+  #navbar nav {
+    display: inline-block;
+    float: right; }
+  /* Remove the nav-item styles */
+  #navbar nav li {
+    width: auto;
+    /* Deactivate width 100% */
+    border-top: none;
+    /* Remove separators */ }
+  /* Adjust the nav-item's height to align them to the navbar. */
+  #navbar nav li a {
+    line-height: 60px;
+    height: 60px;
+    padding: 0 12px; }
+  /* Hide the hamburger. */
+  #hamburger {
+    display: none; }
+  /*
+  Pages
+  */
+  .page.home img {
+    display: block;
+    width: 100%;
+    height: auto; } }

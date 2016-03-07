@@ -1,6 +1,3 @@
-@charset "UTF-8";
-
-
 /* This is to display borders */
 /** { border: 1px dotted red }*/
 
@@ -313,17 +310,11 @@ footer li {
 }
 
 
-/*==========  Extra Small Devices, Phones  ==========*/
+
 @media only screen and (min-width : 544px) {
 }
-
-/*==========  Small Devices, Tablets  ==========*/
 @media only screen and (min-width : 768px) {
-
-
-
-
-/*==========  Small Devices, Tablets  ==========*/
+}
 @media only screen and (min-width : 768px) {
 
 
@@ -373,11 +364,7 @@ footer li {
 }
 
 
-/* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 }
-
-
-/* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 }
