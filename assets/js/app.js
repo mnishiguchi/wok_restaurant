@@ -181,19 +181,19 @@
   var categoryImages  = [
     {
       name: "Restaurant",
-      imgUrl: "img/img_1080_cover_sushi.jpg",
+      imgUrl: "assets/img/img_1080_cover_sushi.jpg",
       linkUrl: "#/restaurant",
       desc: "Restaurant, Serving the best of Japanese and Chinese cuisine."
     },
     {
       name: "Karaoke",
-      imgUrl: "img/img_1080_cover_karaoke.jpg",
+      imgUrl: "assets/img/img_1080_cover_karaoke.jpg",
       linkUrl: "#/karaoke",
       desc: "Karaoke, Features over 50,000 hit songs from all the time."
     },
     {
       name: "Online Order",
-      imgUrl: "img/img_1080_cover_order.jpg",
+      imgUrl: "assets/img/img_1080_cover_order.jpg",
       linkUrl: "http://washington.eat24hours.com/wok-and-roll-restaurant/7260?W=1",
       desc: "Online Order, Our delivery service is FREE when you order online."
     },
