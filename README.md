@@ -358,3 +358,14 @@ var myEl = angular.element( document.querySelector( '#some-id' ) );
 ## Gulp
 - https://css-tricks.com/gulp-for-beginners/
 
+### Troubleshooting
+#### Do not place `\n` after `return` keyword
+```js
+gulp.task('sass', function() {
+  return  // BAD
+    gulp.src( 'app/styles/scss/**/*.scss' )
+      .pipe( sass().on( 'error', sass.logError ) )
+      .pipe( autoprefixer() )
+      .pipe( gulp.dest( 'app/styles/css' ) )
+});
+```

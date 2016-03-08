@@ -133,7 +133,7 @@
         "background": "url(" + this.categoryImages[ 0 ].imgUrl + "  )",
         "background-size":     "cover",
         "background-position": "center",
-      }
+      };
 
     } // end RestaurantController
 
@@ -151,7 +151,7 @@
         "background": "url(" + this.categoryImages[ 1 ].imgUrl + "  )",
         "background-size":     "cover",
         "background-position": "center",
-      }
+      };
 
     } // end KaraokeController
 
@@ -168,7 +168,7 @@
         "background": "url(" + this.categoryImages[ 2 ].imgUrl + "  )",
         "background-size":     "cover",
         "background-position": "center",
-      }
+      };
 
     } // end OnlineOrderController
 

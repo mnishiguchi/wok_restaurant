@@ -246,10 +246,7 @@ header {
   background-color: #222222;
   background: no-repeat center center;
   background-attachment: scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;
   padding: 100px 0;
 }
 .online-order header {
@@ -261,7 +258,7 @@ header {
   header {
     height: 400px;
     padding: 0;
-    background-attachment: scroll;
+    // background-attachment: fixed;
   }
   .home header {
     height: 500px;
