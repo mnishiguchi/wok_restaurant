@@ -9,9 +9,9 @@
   document.addEventListener( "DOMContentLoaded", function( event ) {
 
     // Find elements.
-    hamburger = document.querySelector( "#hamburger" );
-    nav       = document.querySelector( "#navbar nav" );
-    logo      = document.querySelector( "#logo" );
+    hamburger = document.getElementById( "hamburger" );
+    logo      = document.getElementById( "logo" );
+    nav       = document.querySelector( "#site-header nav" );
 
     // Apply the slide up animation defined in CSS to the navigation when:
     // - the hamburger is clicked.

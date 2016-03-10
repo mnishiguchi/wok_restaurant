@@ -3,6 +3,7 @@
 ## Some inspirations / ideas
 - http://wrapbootstrap.com/preview/WB02K3KK3
 - http://www.templatemonster.com/demo/58337.html#gref
+- https://demo.proteusthemes.com/restaurant/
 - http://rachidmrad.com/
 
 ==

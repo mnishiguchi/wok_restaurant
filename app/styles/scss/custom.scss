@@ -1,5 +1,15 @@
+// Bootstrap
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
 /* This is to display borders */
-/** { border: 1px dotted red }*/
+// * { border: 1px dotted red }
+
+
+$base-text-color: #000;
+$base-link-color: #0084b4;
+$base-link-color-hover: #01bbff;
+$header-background: #111;
+$header-text-color: #fff;
 
 
 /*
@@ -42,17 +52,16 @@ h1, h2, h3, h4, p {
   /*line-height: 1;*/
 }
 a {
-  color: #c2b49a;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
+  color: base-link-color;
   transition: all 0.5s;
 }
 a:hover,
 a:focus {
-  color: inherit;
+  color: $base-link-color-hover;
   text-decoration: none;
 }
 p {
+  color: $base-text-color;
   font-size: 18px;
   line-height: 1.5;
 }
@@ -82,7 +91,7 @@ hr {
 
 
 /*
-#logo
+#logo and #humburger
 */
 
 
@@ -91,45 +100,41 @@ hr {
   font-size: 0.8em;
   font-weight: 700;
   letter-spacing: -2.0px;
-  color: white;
+  color: $header-text-color;
   cursor: default;  /* Default cursor instead of the finger pointing */
   height: 60px;
   line-height: 60px;
-  border: 2px solid white;
-  padding: 5px;
+  border: 3px solid $header-text-color;
+  padding: 7px 15px;
   text-decoration: none;
 }
 
 
-/*
-#hamburger
-*/
-
-
-/* Outer */
+/* Hamburger outer */
 #hamburger {
   background: #999;
   position: absolute;
-  top:0;
-  right:20px;
+  top: 20px;
+  right: 20px;
   display: inline-block;
   height: 60px;
   width: 60px;
   float: right;
-  background: white;
+  background: $header-text-color;
   cursor: pointer;
+  padding: 15px;
 }
-
-/* Inner */
+#hamburger:hover {
+  background: $base-link-color-hover;
+}
+/* Hamburger inner */
 #hamburger .inner {
-  position: absolute;
+  position: relative;
   width: 30px;
   height: 30px;
-  top: 15px;
-  left: 15px;
 }
 
-/* Bars */
+/* Hamburger bars */
 #hamburger .inner .bar {
   display: block;
   width: 30px;
@@ -139,6 +144,7 @@ hr {
   right: 0;
   background: #333;
   transition: all .3s ease-out;
+  border-radius: 20px;
 }
 #hamburger .inner .bar:first-child {
   top: 0;
@@ -163,77 +169,109 @@ hr {
 #hamburger.active .inner .bar:nth-child(2) {
   transform-origin: center;
   transform: rotate( 45deg );
-  background: red;
 }
 #hamburger.active .inner .bar:nth-child(3) {
   transform-origin: center;
   transform: rotate( -45deg );
-  background: red;
 }
 
 
 /*
-#navbar
+#site-header
 */
 
+
 /* Remove the default underline associated with links. */
-#navbar nav li a,
-#navbar nav li a.active,
-#navbar nav li a:hover,
-#navbar nav li a.active:hover {
+#site-header nav li a,
+#site-header nav li a.active,
+#site-header nav li a:hover,
+#site-header nav li a.active:hover {
   text-decoration: none;
 }
-#navbar {
-  position: relative; /* This is to make CSS transition smooth? */
-  background: #333;
+
+#site-header {
   display: block;
+  background: $header-background;
   overflow: hidden;  /* This is to prevent the margin collapsing? */
+  padding: 20px 0;
 }
-#navbar nav {
+#site-header nav {
   /* ensure visibility during the transition */
   display: block !important; /* yes, important */
   height: 0;
 }
-#navbar nav.cssSlideUp {
+#site-header nav.cssSlideUp {
   transition: .1s linear all;
-  height: 168px;
+  height: 215px;
 }
-#navbar ul {
+#site-header ul {
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: center;
+  padding-top: 30px; // Adjust the height of the mobile nav menus.
 }
-#navbar li {
+#site-header li {
   display: inline-block;
   width: 100%;
   border-top: 1px solid #999;
+  font-size: 1.2em;
 }
-#navbar li a {
+#site-header li a {
   display: block;
   vertical-align: middle;
   width: 100%;
-  line-height: 40px;
-  height: 40px;
+  line-height: 50px;
+  height: 50px;
   padding: 0 12px;
-  color: white;
+  color: $header-text-color;
   transition: color 0.6s, background 0.6s;
 }
-#navbar li a.active {
+#site-header li a.active {
   background: none;
-  color: white;
+  color: $header-text-color;
   font-weight: bold;
   cursor: default;  /* Default cursor instead of the finger pointing */
 }
-#navbar li a:hover {
-  color: rgba(255,255,255,.5);
+#site-header li a:hover {
+  color: $base-link-color-hover;
 }
-#navbar li a.active:hover {
+#site-header li a.active:hover {
+}
+@media only screen and (min-width : 768px) {
+  /* Hide the hamburger. */
+  #hamburger {
+    display: none;
+  }
+  /* Let the logo float left. */
+  #site-header hgroup {
+    display: inline-block;
+    float: left;
+  }
+  /* Let the navigation float right. */
+  #site-header nav {
+    display: inline-block;
+    float: right;
+  }
+  #site-header nav ul {
+    padding-top: 0;
+  }
+  /* Remove the nav-item styles */
+  #site-header nav li {
+    width: auto;      /* Deactivate width 100% */
+    border-top: none; /* Remove separators */
+  }
+  /* Adjust the nav-item's height to align them to the navbar. */
+  #site-header nav li a {
+    line-height: 60px;
+    height: 60px;
+    padding: 0 12px;
+  }
 }
 
 
 /*
-HEADER
+Pages
 */
 
 
@@ -242,6 +280,7 @@ header {
   display: block;
   height: auto;
   width: auto;
+  min-height: 300px;
   max-width: 100%;
   background-color: #222222;
   background: no-repeat center center;
@@ -256,37 +295,30 @@ header {
 }
 @media (min-width: 768px) {
   header {
-    height: 400px;
+    height: 300px;
     padding: 0;
     // background-attachment: fixed;
   }
-  .home header {
-    height: 500px;
-  }
 }
 
 
-/*
-Pages
-*/
-
-
-.page {
-  min-height: 600px;
-}
-.page header {
-  min-height: 300px;
-}
 .page .content {
   min-height: 300px;
 }
-.service-box {
-  margin: 20px auto;
-}
+// .page .service-box {
+//   margin: 20px auto;
+// }
 
-.page.home img {
-  display: none;
-}
+// .page .home img {
+//   display: none;
+// }
+// @media only screen and (min-width : 768px) {
+//   .page .home img {
+//     display: block;
+//     width: 100%;
+//     height: auto;
+//   }
+// }
 
 
 /*
@@ -295,8 +327,12 @@ Footer
 
 
 footer {
-  padding: 50px 0 20px 0;
-  background: #555;
+  padding: 50px 0 40px 0;
+  background: $header-background;
+}
+footer p {
+  color: $header-text-color;
+  font-size: 1.2em;
 }
 footer ul {
   display: inline-block;
@@ -305,62 +341,15 @@ footer li {
   display: inline-block;
   list-style: none;
 }
-
+footer a {
+  color: $header-text-color;
+}
 
 
 @media only screen and (min-width : 544px) {
 }
 @media only screen and (min-width : 768px) {
 }
-@media only screen and (min-width : 768px) {
-
-
-  /*
-  #navbar
-   */
-
-
-  /* Let the logo float left. */
-  #navbar hgroup {
-    display: inline-block;
-    float: left;
-  }
-  /* Let the navigation float right. */
-  #navbar nav {
-    display: inline-block;
-    float: right;
-  }
-  /* Remove the nav-item styles */
-  #navbar nav li {
-    width: auto;      /* Deactivate width 100% */
-    border-top: none; /* Remove separators */
-  }
-  /* Adjust the nav-item's height to align them to the navbar. */
-  #navbar nav li a {
-    line-height: 60px;
-    height: 60px;
-    padding: 0 12px;
-  }
-  /* Hide the hamburger. */
-  #hamburger {
-    display: none;
-  }
-
-
-  /*
-  Pages
-  */
-
-
-  .page.home img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-}
-
-
 @media only screen and (min-width : 992px) {
 }
 @media only screen and (min-width : 1200px) {
