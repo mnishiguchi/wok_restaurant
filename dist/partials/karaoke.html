@@ -1,0 +1,42 @@
+<div class="karaoke">
+
+  <div class="container content">
+
+    <header  style="background-image: url('img/concert_1000x500.jpg')" ></header>
+
+    <div class="header-content-inner">
+      <h1>Karaoke</h1>
+      <hr class="light">
+      <p>Karaoke is relax and best way to show your talent to your friends or the public, our karaoke Lounge with nine privates rooms in small, medium and large size, where you can entertain your party with your friend and family at your own way. Our system is modern and professionally setup, based on the touch screen search monitor to find over 150,000 songs from the 80th to the newest hits. The variety selection in different languages to fit all our guests taste.</p>
+      <p>
+      <a href="http://www.wokandrolldc.com/foodanddrink" class="btn btn-primary">See Karaoke Menu</a>
+    </div>
+
+    <h2 class="section-heading text-center">
+      Room Charge
+    </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Room</th>
+          <th>Price</th>
+          <th>Capacity</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="item in vm.roomCharge track by $index">
+
+          <td ng-if-start="item.capacity > 0">{{ item.room }}</td>
+          <td>{{ item.price }}</td>
+          <td ng-if-end>{{ item.capacity }}</td>
+
+          <td ng-if-start="item.capacity <= 0">{{ item.room }}</td>
+          <td ng-if-end colspan="2">{{ item.price }}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
