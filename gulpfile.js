@@ -33,6 +33,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 // Run the tasks in the specific order.
 var runSequence = require('run-sequence');
+// Deploy to gh-pages.
+var ghPages = require('gulp-gh-pages');
 
 
 //==========================================================//
@@ -132,6 +134,20 @@ gulp.task( 'cache:clear', function ( callback ) {
 
 
 //==========================================================//
+// Default (Development)
+// - Usage: $ gulp
+//==========================================================//
+
+
+gulp.task( 'default', function ( callback ) {
+  runSequence(
+    [ 'sass', 'server', 'watch' ],  // Run there tasks simultaneously.
+    callback
+  )
+})
+
+
+//==========================================================//
 // Build (Production)
 // - Usage: $ gulp build
 //==========================================================//
@@ -147,14 +163,13 @@ gulp.task( 'build', function ( callback ) {
 
 
 //==========================================================//
-// Default (Development)
-// - Usage: $ gulp
+// Deploy to Github Pages
+// - Usage: $ gulp deploy
 //==========================================================//
 
 
-gulp.task( 'default', function ( callback ) {
-  runSequence(
-    [ 'sass', 'server', 'watch' ],  // Run there tasks simultaneously.
-    callback
-  )
-})
+// Deploy to github-pages.
+gulp.task( 'deploy', function() {
+  return gulp.src( './dist/**/*' )
+    .pipe( ghPages() );
+});

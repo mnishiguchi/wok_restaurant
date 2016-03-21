@@ -301,9 +301,42 @@ header {
   }
 }
 
+#home header {
+  height: 500px;
+  background-image: url('../../img/woknroll_animation.gif');
+}
+@media (min-width: 768px) {
+  #home header {
+    background-image: url('../../img/woknroll_1200x400.jpg');
+  }
+}
+#home .header-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding: 10px 5%;
+}
+#home .header-tint {
+  position:absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.4);
+}
 
-.page .content {
+.page-content {
   min-height: 300px;
+}
+#home .page-content {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#home .hours-card p {
+  display: block;
+  margin-bottom: 20px;
 }
 // .page .service-box {
 //   margin: 20px auto;
