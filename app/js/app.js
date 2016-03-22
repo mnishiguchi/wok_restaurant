@@ -135,6 +135,7 @@
         "background-position": "center",
       };
 
+      this.menuItems = menuItems;
     } // end RestaurantController
 
   angular
@@ -181,22 +182,79 @@
   var categoryImages  = [
     {
       name: "Restaurant",
-      imgUrl: "assets/img/img_1080_cover_sushi.jpg",
+      imgUrl: "img/img_1080_cover_sushi.jpg",
       linkUrl: "#/restaurant",
       desc: "Restaurant, Serving the best of Japanese and Chinese cuisine."
     },
     {
       name: "Karaoke",
-      imgUrl: "assets/img/img_1080_cover_karaoke.jpg",
+      imgUrl: "img/img_1080_cover_karaoke.jpg",
       linkUrl: "#/karaoke",
       desc: "Karaoke, Features over 50,000 hit songs from all the time."
     },
     {
       name: "Online Order",
-      imgUrl: "assets/img/img_1080_cover_order.jpg",
+      imgUrl: "img/img_1080_cover_order.jpg",
       linkUrl: "http://washington.eat24hours.com/wok-and-roll-restaurant/7260?W=1",
       desc: "Online Order, Our delivery service is FREE when you order online."
     },
+  ];
+
+  var menuItems = [
+    {
+      name: "J-1",
+      imgUrl: "img/sushi_1.jpg",
+      linkUrl: "",
+      desc: ""
+    },
+    {
+      name: "J-2",
+      imgUrl: "img/sushi_2.jpg",
+      linkUrl: "",
+      desc: ""
+    },
+    {
+      name: "J-3",
+      imgUrl: "img/sushi_3.jpg",
+      linkUrl: "",
+      desc: ""
+    },
+    {
+      name: "J-4",
+      imgUrl: "img/sushi_4.jpg",
+      linkUrl: "",
+      desc: ""
+    },
+    {
+      name: "J-5",
+      imgUrl: "img/sushi_5.jpg",
+      linkUrl: "",
+      desc: ""
+    },
+    {
+      name: "J-6",
+      imgUrl: "img/sushi_6.jpg",
+      linkUrl: "",
+      desc: ""
+    },
+    {
+      name: "C-1",
+      imgUrl: "img/chinese_1.jpg",
+      linkUrl: "",
+      desc: ""
+    },
+    {
+      name: "C-2",
+      imgUrl: "img/chinese_2.jpg",
+      linkUrl: "",
+      desc: ""
+    },
+    {
+      name: "C-3",
+      imgUrl: "img/chinese_3.jpg",
+      linkUrl: "",
+      desc: ""
+    }
   ];
 
   var roomCharge = [
@@ -223,4 +281,3 @@
   ];
 
 })(); // end module
-

@@ -5,6 +5,7 @@
 - http://www.templatemonster.com/demo/58337.html#gref
 - https://demo.proteusthemes.com/restaurant/
 - http://rachidmrad.com/
+- https://colorlib.com/wp/wordpress-restaurant-themes/
 
 ==
 

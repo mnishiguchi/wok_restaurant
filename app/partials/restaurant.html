@@ -1,4 +1,4 @@
-<div class="restaurant">
+<div id="restaurant">
 
   <div class="container content">
 
@@ -6,10 +6,15 @@
 
     <hr>
 
-    <div class="row">
+    <hgroup>
+      <h2 class="h1 page-heading">Restaurant</h1>
+      <hr>
+    </hgroup>
 
-      <div class="col-md-4 text-center">
-        <div class="service-box">
+    <section class="service-boxes">
+      <div class="row">
+
+        <div class="card service-box col-md-4">
 
           <i class="fa fa-2x fa-glass"></i>
           <h3>
@@ -19,10 +24,8 @@
             Happy Hour from Monday to Friday 5PM to 8PM.
           </p>
         </div>
-      </div>
 
-      <div class="col-md-4 text-center">
-        <div class="service-box">
+        <div class="card service-box col-md-4">
 
           <i class="fa fa-2x fa-wifi" data-wow-delay=".1s"></i>
           <h3>
@@ -32,10 +35,8 @@
             Free Wi-Fi for all business meeting and social networking's need.
           </p>
         </div>
-      </div>
 
-      <div class="col-md-4 text-center">
-        <div class="service-box">
+        <div class="card service-box col-md-4">
 
           <i class="fa fa-2x fa-users" data-wow-delay=".1s"></i>
           <h3>
@@ -45,7 +46,43 @@
             Your event detail is our priority and will be handled professionally.
           </p>
         </div>
-      </div>
-    </div>
+
+      </div><!-- /row-->
+    </section>
+
+    <hr>
+
+    <!-- Menu gallery -->
+
+    <section class="menu" >
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-12">
+            <h2>Menu</h2>
+            <p>Here is a selection of items from our menu. For additional details, please refer to our
+              <a href="http://www.wokandrolldc.com/file/wok_and_roll_full_menu.pdf">full menu</a> or call us at <a class="text-link" href="tel:2023474656">(202) 347-4656</a>.</p>
+          </div>
+        </div>
+
+        <div class="row content-row">
+          <div class="col-lg-12">
+            <div class="portfolio-gallery card-columns">
+
+              <!-- IMG-SIZE-600x450 -->
+              <div
+                class="card card-block menu-item"
+                ng-repeat="item in vm.menuItems"
+                gallery="{selector: '.image'}">
+                <a href="#" class="gallery-link" title="Cake">
+                  <img ng-src="{{ item.imgUrl }}" class="img-responsive img-centered" alt="">
+                </a>
+              </div><!--/.item-->
+
+            </div><!--/.portfolio-gallery-->
+          </div><!--/.col-->
+        </div><!--/.row-->
+      </div><!--/.container-->
+    </section>
+
   </div><!-- /.container -->
 </div>
