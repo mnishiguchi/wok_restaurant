@@ -15,6 +15,7 @@
 /**
  * Reset CSS.
  */
+
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
@@ -28,6 +29,7 @@ html{
 /**
  * App-wide common styles.
  */
+
 html, body {
   position: relative;
   height: 100%;
@@ -42,7 +44,6 @@ body {
 /**
  * Typography
  */
-
 
 // Reset some propertyies so that we can adjust spacing easily.
 h1, h2, h3, h4, p {
@@ -113,33 +114,27 @@ h4, .h4 {
 
 
 /**
- * Utility classes.
- */
-.clearfix {
-  clear: both;
-}
-
-
-/**
  * My bootstrap
  */
+
 .container {
  margin-right: auto;
  margin-left: auto;
+ width: 95%;
 }
 @media (min-width: 768px) {
  .container {
-   width: 750px;
+   width: 90%;
  }
 }
 @media (min-width: 992px) {
  .container {
-   width: 970px;
+   width: 80%;
  }
 }
 @media (min-width: 1200px) {
  .container {
-   width: 1170px;
+   width: 70%;
  }
 }
 
@@ -162,12 +157,14 @@ h4, .h4 {
 .small {
   font-size: 14px;
 }
+.clearfix {
+  clear: both;
+}
 table {
   border-collapse: collapse;
   width: 100%;
   max-width: 600px;
 }
-
 td, th {
   border: 1px solid #999;
   padding: 0.5rem;
@@ -178,6 +175,7 @@ td, th {
 /**
  * Pages
  */
+
 header {
   position: relative;
   display: block;
@@ -206,11 +204,11 @@ header {
 
 #main-wrapper {
   padding-bottom: 40px;
-  min-height: 600px;
+  min-height: 500px;
 }
 
 #home header {
-  height: 600px;
+  height: 400px;
   background-image: url('../../img/woknroll_animation.gif');
 }
 @media (min-width: 768px) {
@@ -223,6 +221,7 @@ header {
   bottom: 0;
   left: 0;
   padding: 10px 8%;
+  max-height: 300px;
   overflow-y: auto;
 }
 #home .text-box .landing-text {
@@ -236,11 +235,6 @@ header {
   font-style: italic;
   font-weight: normal;
 }
-#home .text-box p {
-  color: #ddd;
-  font-size: 1.3em;
-  font-style: italic;
-}
 #home .header-tint {
   position:absolute;
   top: 0;
@@ -249,6 +243,10 @@ header {
   height: 100%;
   width: 100%;
   background: rgba(0,0,0,.5);
+}
+#home .intro-text {
+  margin: 40px 0;
+  font-size: 1.2em;
 }
 
 .page-content {
@@ -272,6 +270,10 @@ header {
 }
 #restaurant .menu {
   margin-top: 40px;
+}
+#restaurant .custom-carousel {
+  list-style-type: none;
+  // margin-left: -2em;
 }
 
 #karaoke .intro-text,

@@ -1,4 +1,4 @@
-<div class="restaurant">
+<div id="restaurant">
 
   <div class="container content">
 
@@ -6,46 +6,74 @@
 
     <hr>
 
-    <div class="row">
+    <h1 class="h1 page-heading">
+      Restaurant
+    </h1>
 
-      <div class="col-md-4 text-center">
-        <div class="service-box">
+    <div class="card-list">
 
+      <div class="card">
+        <div class="card-content">
           <i class="fa fa-2x fa-glass"></i>
-          <h3>
-            Happy Hour
-          </h3>
-          <p>
-            Happy Hour from Monday to Friday 5PM to 8PM.
+          <h4 class="card-title">Happy Hour</h4>
+          <p class="card-text">
+            Monday through Friday, 5pm-8pm.
           </p>
         </div>
       </div>
-
-      <div class="col-md-4 text-center">
-        <div class="service-box">
-
-          <i class="fa fa-2x fa-wifi" data-wow-delay=".1s"></i>
-          <h3>
-            Free Wi-Fi
-          </h3>
-          <p>
-            Free Wi-Fi for all business meeting and social networking's need.
+      <div class="card">
+        <div class="card-content">
+          <i class="fa fa-2x fa-wifi"></i>
+          <h4 class="card-title">Free Wi-Fi</h4>
+          <p class="card-text">
+            For all business meeting and social networking's need.
           </p>
         </div>
       </div>
-
-      <div class="col-md-4 text-center">
-        <div class="service-box">
-
-          <i class="fa fa-2x fa-users" data-wow-delay=".1s"></i>
-          <h3>
-            Events
-          </h3>
-          <p>
+      <div class="card">
+        <div class="card-content">
+          <i class="fa fa-2x fa-users"></i>
+          <h4 class="card-title">Events</h4>
+          <p class="card-text">
             Your event detail is our priority and will be handled professionally.
           </p>
         </div>
       </div>
-    </div>
+
+    </div><!-- /card-list -->
+
+    <!-- Menu gallery -->
+
+    <section class="menu" >
+      <h2>Menu</h2>
+      <p>
+        Here is a selection of items from our menu. For additional details, please refer to our
+        <a href="http://www.wokandrolldc.com/file/wok_and_roll_full_menu.pdf">full menu</a> or call us at <a class="text-link" href="tel:2023474656">(202) 347-4656</a>.
+      </p>
+
+      <!-- IMG-SIZE-600x450 -->
+      <ul
+        class="custom-carousel" >
+
+        <li
+          class="card card-block menu-item"
+          ng-repeat="item in vm.items"
+          ng-show="vm.isVisible( $index )">
+          <a href="#" class="" title="">
+            <img
+              ng-src="{{ item.imgUrl }}"
+              alt=""
+              height="300" width="400">
+          </a>
+        </li ><!--/.item-->
+
+      </ul><!--/.portfolio-gallery-->
+
+      <form>
+        <input type="button" value="Back" ng-click="vm.showPrev()" class="custom-button"/>
+        <input type="button" value="Forward" ng-click="vm.showNext()" class="custom-button"/>
+      </form>
+    </section>
+
   </div><!-- /.container -->
 </div>

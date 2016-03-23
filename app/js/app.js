@@ -29,9 +29,7 @@
   ];
 
   function config( $routeProvider ) {
-
     $routeProvider
-
       .when("/home", {
           title:       "Home",
           templateUrl: "partials/home.html",
@@ -76,9 +74,7 @@
 
       // Set page title.
       if ( $route.current.title ) {
-
         window.document.title = $route.current.title + baseTitle;
-
       }
 
       // Remove the active class from the previously active nav-items.
@@ -118,9 +114,6 @@
     HomeController.$inject = [];
 
     function HomeController() {
-
-      this.categoryImages = categoryImages;
-
     } // end HomeController
 
   angular
@@ -131,14 +124,43 @@
 
     function RestaurantController() {
 
-      this.categoryImages = categoryImages;
-      this.bgCss = {
-        "background": "url(" + this.categoryImages[ 0 ].imgUrl + "  )",
-        "background-size":     "cover",
-        "background-position": "center",
-      };
+      // Load image data.
+      this.items = menuItems;
 
-      this.menuItems = menuItems;
+      // Private fields.
+      var listSize  = this.items.length; // Store the item count.
+      var visibleID = 0;                 // Keep track of displayed item's ID.
+
+      // Expose public methods.
+      this.showPrev  = showPrev;
+      this.showNext  = showNext;
+      this.isVisible = isVisible;
+
+      // Update the visibleID to show the previous image.
+      function showPrev() {
+        // If the item is the first item, prev is the last item.
+        if ( visibleID === 0 ) {
+          visibleID = listSize - 1;
+        } else {
+          visibleID--;
+        }
+      }
+
+      // Update the visibleID to show the next image.
+      function showNext() {
+        if ( visibleID === listSize - 1 ) {
+          // If the item is the last item, next is the first item.
+          visibleID = 0;
+        } else {
+          visibleID++;
+        }
+      }
+
+      // Return true if item ID is visible.
+      function isVisible( itemID ) {
+        return itemID === visibleID;
+      }
+
     } // end RestaurantController
 
   angular
@@ -148,15 +170,7 @@
     KaraokeController.$inject = [];
 
     function KaraokeController() {
-
       this.roomCharge = roomCharge;
-      this.categoryImages = categoryImages;
-      this.bgCss = {
-        "background": "url(" + this.categoryImages[ 1 ].imgUrl + "  )",
-        "background-size":     "cover",
-        "background-position": "center",
-      };
-
     } // end KaraokeController
 
   angular
@@ -166,14 +180,6 @@
     OnlineOrderController.$inject = [];
 
     function OnlineOrderController() {
-
-      this.categoryImages = categoryImages;
-      this.bgCss = {
-        "background": "url(" + this.categoryImages[ 2 ].imgUrl + "  )",
-        "background-size":     "cover",
-        "background-position": "center",
-      };
-
     } // end OnlineOrderController
 
 
@@ -181,27 +187,6 @@
   // Data.
   //=============================================//
 
-
-  var categoryImages  = [
-    {
-      name: "Restaurant",
-      imgUrl: "img/img_1080_cover_sushi.jpg",
-      linkUrl: "#/restaurant",
-      desc: "Restaurant, Serving the best of Japanese and Chinese cuisine."
-    },
-    {
-      name: "Karaoke",
-      imgUrl: "img/img_1080_cover_karaoke.jpg",
-      linkUrl: "#/karaoke",
-      desc: "Karaoke, Features over 50,000 hit songs from all the time."
-    },
-    {
-      name: "Online Order",
-      imgUrl: "img/img_1080_cover_order.jpg",
-      linkUrl: "http://washington.eat24hours.com/wok-and-roll-restaurant/7260?W=1",
-      desc: "Online Order, Our delivery service is FREE when you order online."
-    },
-  ];
 
   var menuItems = [
     {

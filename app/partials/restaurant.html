@@ -45,31 +45,34 @@
     <!-- Menu gallery -->
 
     <section class="menu" >
-      <div class="container">
-        
-        <h2>
-          Menu
-        </h2>
-        <p>
-          Here is a selection of items from our menu. For additional details, please refer to our
-          <a href="http://www.wokandrolldc.com/file/wok_and_roll_full_menu.pdf">full menu</a> or call us at <a class="text-link" href="tel:2023474656">(202) 347-4656</a>.
-        </p>
+      <h2>Menu</h2>
+      <p>
+        Here is a selection of items from our menu. For additional details, please refer to our
+        <a href="http://www.wokandrolldc.com/file/wok_and_roll_full_menu.pdf">full menu</a> or call us at <a class="text-link" href="tel:2023474656">(202) 347-4656</a>.
+      </p>
 
-        <div class="portfolio-gallery card-columns">
+      <!-- IMG-SIZE-600x450 -->
+      <ul
+        class="custom-carousel" >
 
-          <!-- IMG-SIZE-600x450 -->
-          <div
-            class="card card-block menu-item"
-            ng-repeat="item in vm.menuItems"
-            gallery="{selector: '.image'}">
-            <a href="#" class="gallery-link" title="Cake">
-              <img ng-src="{{ item.imgUrl }}" class="img-responsive img-centered" alt="">
-            </a>
-          </div><!--/.item-->
+        <li
+          class="card card-block menu-item"
+          ng-repeat="item in vm.items"
+          ng-show="vm.isVisible( $index )">
+          <a href="#" class="" title="">
+            <img
+              ng-src="{{ item.imgUrl }}"
+              alt=""
+              height="300" width="400">
+          </a>
+        </li ><!--/.item-->
 
-        </div><!--/.portfolio-gallery-->
+      </ul><!--/.portfolio-gallery-->
 
-      </div><!--/.container-->
+      <form>
+        <input type="button" value="Back" ng-click="vm.showPrev()" class="custom-button"/>
+        <input type="button" value="Forward" ng-click="vm.showNext()" class="custom-button"/>
+      </form>
     </section>
 
   </div><!-- /.container -->

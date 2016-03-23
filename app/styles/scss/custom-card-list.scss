@@ -26,7 +26,7 @@
 // Details.
 
 .card {
-  padding: .5%;
+  padding: 0;
 }
 .card-list .card-content {
   // background: #ddd;
@@ -46,6 +46,9 @@
   overflow: auto;
 }
 @media only screen and (min-width : 992px) {
+  .card {
+    padding: .5%;
+  }
   .card-list .card {
     width: 33.33%;
     float: left;
@@ -67,6 +70,3 @@
     overflow: auto;
   }
 }
-
-
-
