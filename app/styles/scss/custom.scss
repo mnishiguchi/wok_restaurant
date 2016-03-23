@@ -80,6 +80,17 @@ h6 {
   font-weight: 400;
   text-transform: uppercase;
 }
+h1 { color: rgba(255,255,255, 1) }
+h2 { color: rgba(255,255,255, .9) }
+h3 { color: rgba(255,255,255, .8) }
+h4 { color: rgba(255,255,255, .8) }
+p  { color: rgba(255,255,255, .8) }
+#main-wrapper h1 { color: rgba(0,0,0, 1) }
+#main-wrapper h2 { color: rgba(0,0,0, .9) }
+#main-wrapper h3 { color: rgba(0,0,0, .8) }
+#main-wrapper h4 { color: rgba(0,0,0, .8) }
+#main-wrapper p  { color: rgba(0,0,0, .8) }
+
 hr {
   margin: 0;
   border: 0;
@@ -109,7 +120,6 @@ h4, .h4 {
 }
 
 
-
 /**
  * My bootstrap
  */
@@ -131,6 +141,37 @@ h4, .h4 {
  .container {
    width: 1170px;
  }
+}
+
+.custom-button{
+  display: inline-block;
+  background: white;
+  color: #333;
+  border: 1px solid gray;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: .5rem;
+  outline: none;
+  margin: 5px 0;
+}
+.custom-button:hover{
+  background: #ddd;
+  color: $base-link-color-hover;
+}
+.small {
+  font-size: 14px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
 }
 
 
@@ -169,7 +210,7 @@ header {
 }
 
 #home header {
-  height: 500px;
+  height: 600px;
   background-image: url('../../img/woknroll_animation.gif');
 }
 @media (min-width: 768px) {
@@ -177,18 +218,28 @@ header {
     background-image: url('../../img/woknroll_1200x400.jpg');
   }
 }
-#home .header-text {
+#home .text-box {
   position: absolute;
   bottom: 0;
   left: 0;
   padding: 10px 8%;
+  overflow-y: auto;
 }
-#home .header-text h2 {
+#home .text-box .landing-text {
+  font-weight: bold;
   color: white;
   padding-bottom: 20px;
 }
-#home .header-text p {
-  color: white;
+#home .text-box .landing-text > span {
+  font-size: 0.8em;
+  font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+#home .text-box p {
+  color: #ddd;
+  font-size: 1.3em;
+  font-style: italic;
 }
 #home .header-tint {
   position:absolute;
@@ -197,7 +248,7 @@ header {
   display: block;
   height: 100%;
   width: 100%;
-  background: rgba(0,0,0,.4);
+  background: rgba(0,0,0,.5);
 }
 
 .page-content {
@@ -225,7 +276,6 @@ header {
 
 #karaoke .intro-text,
 #karaoke .room-charge {
-  margin-top: 40px;
   margin-bottom: 40px;
 }
 
