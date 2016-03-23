@@ -1,31 +1,33 @@
+/**
+ * This is the entry point of custom styles.
+ */
+
+@import "./custom-variables";
+@import "./custom-site-header";
+@import "./custom-site-footer";
+@import "./custom-card-list";
+
+
 /* This is to display borders */
 // * { border: 1px dotted red }
 
 
-$base-text-color: #000;
-$base-link-color: #0084b4;
-$base-link-color-hover: #01bbff;
-$header-background: #111;
-$header-text-color: #fff;
-
-
-/*
-Reset CSS, border-box model
-*/
-
-
-* {
+/**
+ * Reset CSS.
+ */
+*, *:before, *:after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+html{
+  font-size: 16px;
 }
 
 
-/*
-App-wide common styles.
-*/
-
-
+/**
+ * App-wide common styles.
+ */
 html, body {
   position: relative;
   height: 100%;
@@ -37,16 +39,16 @@ body {
 }
 
 
-/*
-Typography
-*/
+/**
+ * Typography
+ */
 
 
-/* Reset some propertyies so that we can adjust spacing easily. */
+// Reset some propertyies so that we can adjust spacing easily.
 h1, h2, h3, h4, p {
   padding: 0;
   margin: 0;
-  /*line-height: 1;*/
+  // line-height: 1;
 }
 a {
   color: base-link-color;
@@ -85,267 +87,56 @@ hr {
   background: #333;
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
+h1, .h1 {
+  font-size: 2.6em;
+}
+h2, .h2 {
+  font-size: 2.2em;
+}
+h3, .h3 {
+  font-size: 2.0em;
+}
+h4, .h4 {
+  font-size: 1.5em;
+}
 
-/*
-My bootstrap
+
+/**
+ * Utility classes.
  */
+.clearfix {
+  clear: both;
+}
+
+
+
+/**
+ * My bootstrap
+ */
+.container {
+ margin-right: auto;
+ margin-left: auto;
+}
+@media (min-width: 768px) {
  .container {
-   padding-right: 15px;
-   padding-left: 15px;
-   margin-right: auto;
-   margin-left: auto;
+   width: 750px;
  }
- @media (min-width: 768px) {
-   .container {
-     width: 750px;
-   }
+}
+@media (min-width: 992px) {
+ .container {
+   width: 970px;
  }
- @media (min-width: 992px) {
-   .container {
-     width: 970px;
-   }
+}
+@media (min-width: 1200px) {
+ .container {
+   width: 1170px;
  }
- @media (min-width: 1200px) {
-   .container {
-     width: 1170px;
-   }
- }
-
- .row {
-   height: 100%;
-  //  padding: 40px 0;
-   overflow: auto;
- }
- .card {
-   background: #ddd;
-   padding: 10px;
- }
- .card img {
-   display: none;
- }
-
- .card h4 {
-   font-size: 2.0em;
- }
- .card p {
-   font-size: 1.0em;
-   padding: 20px 0;
-   overflow: auto;
- }
- @media only screen and (min-width : 992px) {
-   .row {
-     height: 100%;
-     padding: 40px 0;
-     overflow: auto;
-     margin: 0 -1.3%;
-   }
-   .card {
-     width: 33.33%;
-     float: left;
-     padding: 10px;
-   }
-   .card img {
-     display: block;
-     width: 100%;
-     height: auto;
-     border: 4px inset #999;
-     margin-bottom: 16px;
-   }
-   .card h4 {
- /*    font-size: 2.0em;*/
-   }
-   .card p {
-     font-size: 1.0em;
-     padding: 20px 5px;
-     overflow: auto;
-   }
- }
-
-/*
-#logo and #humburger
-*/
-
-
-#logo a {
-  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.8em;
-  font-weight: 700;
-  letter-spacing: -2.0px;
-  color: $header-text-color;
-  cursor: default;  /* Default cursor instead of the finger pointing */
-  height: 60px;
-  line-height: 60px;
-  border: 3px solid $header-text-color;
-  padding: 7px 15px;
-  text-decoration: none;
 }
 
 
-/* Hamburger outer */
-#hamburger {
-  background: #999;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  float: right;
-  background: $header-text-color;
-  cursor: pointer;
-  padding: 15px;
-}
-#hamburger:hover {
-  background: $base-link-color-hover;
-}
-/* Hamburger inner */
-#hamburger .inner {
-  position: relative;
-  width: 30px;
-  height: 30px;
-}
-
-/* Hamburger bars */
-#hamburger .inner .bar {
-  display: block;
-  width: 30px;
-  height: 6px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  background: #333;
-  transition: all .3s ease-out;
-  border-radius: 20px;
-}
-#hamburger .inner .bar:first-child {
-  top: 0;
-}
-#hamburger .inner .bar:nth-child(2),
-#hamburger .inner .bar:nth-child(3) {
-  top: 12px;
-}
-#hamburger .inner .bar:last-child {
-  top: 24px;
-}
-
-/* Active hamburger */
-#hamburger.active .inner .bar:first-child {
-  top: -15px;
-  opacity: 0;
-}
-#hamburger.active .inner .bar:last-child {
-  top: 51px;
-  opacity: 0;
-}
-#hamburger.active .inner .bar:nth-child(2) {
-  transform-origin: center;
-  transform: rotate( 45deg );
-}
-#hamburger.active .inner .bar:nth-child(3) {
-  transform-origin: center;
-  transform: rotate( -45deg );
-}
-
-
-/*
-#site-header
-*/
-
-
-/* Remove the default underline associated with links. */
-#site-header nav li a,
-#site-header nav li a.active,
-#site-header nav li a:hover,
-#site-header nav li a.active:hover {
-  text-decoration: none;
-}
-
-#site-header {
-  display: block;
-  background: $header-background;
-  overflow: hidden;  /* This is to prevent the margin collapsing? */
-  padding: 20px 0;
-}
-#site-header nav {
-  /* ensure visibility during the transition */
-  display: block !important; /* yes, important */
-  height: 0;
-}
-#site-header nav.cssSlideUp {
-  transition: .1s linear all;
-  height: 215px;
-}
-#site-header ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  padding-top: 30px; // Adjust the height of the mobile nav menus.
-}
-#site-header li {
-  display: inline-block;
-  width: 100%;
-  border-top: 1px solid #999;
-  font-size: 1.2em;
-}
-#site-header li a {
-  display: block;
-  vertical-align: middle;
-  width: 100%;
-  line-height: 50px;
-  height: 50px;
-  padding: 0 12px;
-  color: $header-text-color;
-  transition: color 0.6s, background 0.6s;
-}
-#site-header li a.active {
-  background: none;
-  color: $header-text-color;
-  font-weight: bold;
-  cursor: default;  /* Default cursor instead of the finger pointing */
-}
-#site-header li a:hover {
-  color: $base-link-color-hover;
-}
-#site-header li a.active:hover {
-}
-@media only screen and (min-width : 768px) {
-  /* Hide the hamburger. */
-  #hamburger {
-    display: none;
-  }
-  /* Let the logo float left. */
-  #site-header hgroup {
-    display: inline-block;
-    float: left;
-  }
-  /* Let the navigation float right. */
-  #site-header nav {
-    display: inline-block;
-    float: right;
-  }
-  #site-header nav ul {
-    padding-top: 0;
-  }
-  /* Remove the nav-item styles */
-  #site-header nav li {
-    width: auto;      /* Deactivate width 100% */
-    border-top: none; /* Remove separators */
-  }
-  /* Adjust the nav-item's height to align them to the navbar. */
-  #site-header nav li a {
-    line-height: 60px;
-    height: 60px;
-    padding: 0 12px;
-  }
-}
-
-
-/*
-Pages
-*/
-
-
+/**
+ * Pages
+ */
 header {
   position: relative;
   display: block;
@@ -450,73 +241,6 @@ header {
 #online-order .intro-text {
   margin-top: 40px;
   margin-bottom: 40px;
-}
-
-
-/*
-Footer
- */
-
-
-footer {
-  display: block;
-  height: auto;
-  padding: 50px 0 40px 0;
-  background: $header-background;
-}
-footer address {
-  color: $header-text-color;
-  font-size: 1.2em;
-}
-footer address .company-name,
-footer address .address,
-footer address .telephone, {
-  display:block;
-}
-footer .social_links {
-  display: block;
-  margin-top: 20px;
-}
-footer li {
-  display: inline-block;
-  list-style: none;
-}
-footer a {
-  color: $header-text-color;
-  text-decoration: none;
-}
-@media (min-width: 768px) {
-  footer {
-
-  }
-  footer address {
-    display: inline-block;
-    float: left;
-  }
-  footer address .company-name,
-  footer address .address,
-  footer address .telephone, {
-    display:block;
-    float: left;
-    margin-left: 20px;
-  }
-  footer .social_links {
-    display: inline-block;
-    float:right;
-    margin: 0;
-  }
-  footer li {
-    display: inline-block;
-    float: right;
-    padding: 5px;
-  }
-  footer a {
-    color: $header-text-color;
-  }
-}
-
-.clearfix {
-  clear: both;
 }
 
 

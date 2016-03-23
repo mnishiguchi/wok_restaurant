@@ -1,0 +1,184 @@
+@import "./custom-variables";
+
+
+/*
+#logo and #humburger
+*/
+
+
+#logo {
+  font-size: 2.6em;
+}
+#logo a {
+  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: -2.0px;
+  color: $header-text-color;
+  cursor: default;  /* Default cursor instead of the finger pointing */
+  height: 60px;
+  line-height: 60px;
+  border: 3px solid $header-text-color;
+  padding: 7px 15px;
+  text-decoration: none;
+}
+
+
+/* Hamburger outer */
+#hamburger {
+  background: #999;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: right;
+  background: $header-text-color;
+  cursor: pointer;
+  padding: 15px;
+}
+#hamburger:hover {
+  background: $base-link-color-hover;
+}
+/* Hamburger inner */
+#hamburger .inner {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+/* Hamburger bars */
+#hamburger .inner .bar {
+  display: block;
+  width: 30px;
+  height: 6px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #333;
+  transition: all .3s ease-out;
+  border-radius: 20px;
+}
+#hamburger .inner .bar:first-child {
+  top: 0;
+}
+#hamburger .inner .bar:nth-child(2),
+#hamburger .inner .bar:nth-child(3) {
+  top: 12px;
+}
+#hamburger .inner .bar:last-child {
+  top: 24px;
+}
+
+/* Active hamburger */
+#hamburger.active .inner .bar:first-child {
+  top: -15px;
+  opacity: 0;
+}
+#hamburger.active .inner .bar:last-child {
+  top: 51px;
+  opacity: 0;
+}
+#hamburger.active .inner .bar:nth-child(2) {
+  transform-origin: center;
+  transform: rotate( 45deg );
+}
+#hamburger.active .inner .bar:nth-child(3) {
+  transform-origin: center;
+  transform: rotate( -45deg );
+}
+
+
+/*
+#site-header
+*/
+
+
+/* Remove the default underline associated with links. */
+#site-header nav li a,
+#site-header nav li a.active,
+#site-header nav li a:hover,
+#site-header nav li a.active:hover {
+  text-decoration: none;
+}
+
+#site-header {
+  display: block;
+  background: $header-background;
+  overflow: hidden;  /* This is to prevent the margin collapsing? */
+  padding: 20px 0;
+}
+#site-header nav {
+  /* ensure visibility during the transition */
+  display: block !important; /* yes, important */
+  height: 0;
+}
+#site-header nav.cssSlideUp {
+  transition: .1s linear all;
+  height: 215px;
+}
+#site-header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  padding-top: 30px; // Adjust the height of the mobile nav menus.
+}
+#site-header li {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #999;
+  font-size: 1.2em;
+}
+#site-header li a {
+  display: block;
+  vertical-align: middle;
+  width: 100%;
+  line-height: 50px;
+  height: 50px;
+  padding: 0 12px;
+  color: $header-text-color;
+  transition: color 0.6s, background 0.6s;
+}
+#site-header li a.active {
+  background: none;
+  color: $header-text-color;
+  font-weight: bold;
+  cursor: default;  /* Default cursor instead of the finger pointing */
+}
+#site-header li a:hover {
+  color: $base-link-color-hover;
+}
+#site-header li a.active:hover {
+}
+@media only screen and (min-width : 768px) {
+  /* Hide the hamburger. */
+  #hamburger {
+    display: none;
+  }
+  /* Let the logo float left. */
+  #site-header hgroup {
+    display: inline-block;
+    float: left;
+  }
+  /* Let the navigation float right. */
+  #site-header nav {
+    display: inline-block;
+    float: right;
+  }
+  #site-header nav ul {
+    padding-top: 0;
+  }
+  /* Remove the nav-item styles */
+  #site-header nav li {
+    width: auto;      /* Deactivate width 100% */
+    border-top: none; /* Remove separators */
+  }
+  /* Adjust the nav-item's height to align them to the navbar. */
+  #site-header nav li a {
+    line-height: 60px;
+    height: 60px;
+    padding: 0 12px;
+  }
+}

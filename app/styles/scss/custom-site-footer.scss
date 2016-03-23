@@ -1,0 +1,59 @@
+@import "./custom-variables";
+
+
+footer {
+  display: block;
+  height: auto;
+  padding: 50px 0 40px 0;
+  background: $header-background;
+}
+footer address {
+  color: $header-text-color;
+  font-size: 1.2em;
+}
+footer address .company-name,
+footer address .address,
+footer address .telephone, {
+  display:block;
+}
+footer .social_links {
+  display: block;
+  margin-top: 20px;
+}
+footer li {
+  display: inline-block;
+  list-style: none;
+}
+footer a {
+  color: $header-text-color;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  footer {
+
+  }
+  footer address {
+    display: inline-block;
+    float: left;
+  }
+  footer address .company-name,
+  footer address .address,
+  footer address .telephone, {
+    display:block;
+    float: left;
+    margin-left: 20px;
+  }
+  footer .social_links {
+    display: inline-block;
+    float:right;
+    margin: 0;
+  }
+  footer li {
+    display: inline-block;
+    float: right;
+    padding: 5px;
+  }
+  footer a {
+    color: $header-text-color;
+  }
+}

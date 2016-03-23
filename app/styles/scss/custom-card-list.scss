@@ -1,0 +1,72 @@
+/**
+ * Responsive card list
+ */
+
+@import "./custom-variables";
+
+
+// Core configuration.
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-list .card {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%; /* IE11バグ対応 */
+}
+@media (max-width: 800px) {
+  .card-list .card {
+    flex: 0 0 100%;
+    max-width: 100%; /* IE11バグ対応 */
+  }
+}
+
+
+// Details.
+
+.card {
+  padding: .5%;
+}
+.card-list .card-content {
+  // background: #ddd;
+  padding: 10px;
+  border: 1px solid #999;
+}
+.card-list .card-content img {
+  display: none;
+}
+
+.card-list .card-title {
+  font-size: 1.5em;
+}
+.card-list .card-content p {
+  font-size: 1.0em;
+  padding: 20px 0;
+  overflow: auto;
+}
+@media only screen and (min-width : 992px) {
+  .card-list .card {
+    width: 33.33%;
+    float: left;
+    padding: 10px;
+  }
+  .card-list .card-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 4px inset #999;
+    margin-bottom: 16px;
+  }
+  .card-list .card-title {
+    font-size: 1.5em;
+  }
+  .card-list .card-content p {
+    font-size: 1.0em;
+    padding: 20px 5px;
+    overflow: auto;
+  }
+}
+
+
+

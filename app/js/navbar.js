@@ -1,3 +1,5 @@
+"use strict";
+
 ( function() {
 
   // Store elements.
@@ -35,4 +37,5 @@
     nav.classList.remove( "cssSlideUp" );
     hamburger.classList.remove( "active" );
   }
+
 })();
